@@ -12,6 +12,8 @@ const errorColor = Color(0xffc87979);
 const buttonPressedColor = Color(0xffa5bded);
 const buttonDisabledColor = Color(0xff676767);
 
+
+// Convert Color to Material Color
 MaterialColor createMaterialColor(Color color) {
   List strengths = <double>[.05];
   Map<int, Color> swatch = {};

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nolajyo_project/res/color_data.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nolajyo_project/view/persmission/permission_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,14 +20,18 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         //
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: '노라죠',
           theme: ThemeData(
+            fontFamily: 'Noto Sans Kr',
             primarySwatch: createMaterialColor(mainColor),
           ),
           home: child,
         );
       },
-      child: Container(),
+
+      // if the permission is already enabled or the user is already registered, directly go to the main screen
+      child: const PermissionScreen(),
     );
   }
 }
