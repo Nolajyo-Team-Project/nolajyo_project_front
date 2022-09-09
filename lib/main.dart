@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nolajyo_project/res/color_data.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
+import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
 
 void main() {
@@ -13,22 +14,17 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
   // routers
-  final GoRouter _router = GoRouter(
-    routes: <GoRoute>[
-      // temp Home page
-      GoRoute(
-        name: "Home",
-        path: '/',
-        builder: (context, state) => const TempHomeScreen(),
-      ),
-      // 임시로 permission screen을 home으로 설정
-      GoRoute(
-        name: "Permission screen",
-        path: '/permission',
-        builder: (context, state) => const PermissionScreen(),
-      )
-    ],
-  );
+  final GoRouter _router = GoRouter(routes: <GoRoute>[
+    // temp Home page
+    GoRoute(name: "Home", path: '/', builder: (context, state) => const AuthenticationScreen()),
+
+    // 임시로 permission screen을 home으로 설정
+    GoRoute(
+      name: "Permission screen",
+      path: '/permission',
+      builder: (context, state) => const PermissionScreen(),
+    )
+  ],);
 
   @override
   Widget build(BuildContext context) {

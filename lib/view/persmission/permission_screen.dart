@@ -38,6 +38,7 @@ class PermissionScreen extends StatelessWidget {
               description: '회원가입시 기기인증 상태 유지',
               icon: Icons.phone_in_talk_rounded,
             ),
+            const Spacer(),
             SizedBox(
               width: MediaQuery.of(context).size.width - 60,
               height: 70,
