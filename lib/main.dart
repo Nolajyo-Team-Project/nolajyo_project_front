@@ -16,8 +16,11 @@ class MyApp extends StatelessWidget {
   final GoRouter _router = GoRouter(
     routes: <GoRoute>[
       // temp Home page
-      GoRoute(name: "Home", path: '/', builder: (context, state) => const TempHomeScreen()),
-
+      GoRoute(
+        name: "Home",
+        path: '/',
+        builder: (context, state) => const TempHomeScreen(),
+      ),
       // 임시로 permission screen을 home으로 설정
       GoRoute(
         name: "Permission screen",
@@ -35,7 +38,6 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
-        //
         return MaterialApp.router(
           routeInformationProvider: _router.routeInformationProvider,
           routeInformationParser: _router.routeInformationParser,
@@ -46,11 +48,9 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Noto Sans Kr',
             primarySwatch: createMaterialColor(mainColor),
           ),
-
           // home: child,
         );
       },
-
       // if the permission is already enabled or the user is already registered, directly go to the main screen
       child: const PermissionScreen(),
     );
