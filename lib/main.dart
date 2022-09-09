@@ -14,17 +14,26 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
   // routers
-  final GoRouter _router = GoRouter(routes: <GoRoute>[
-    // temp Home page
-    GoRoute(name: "Home", path: '/', builder: (context, state) => const AuthenticationScreen()),
-
-    // 임시로 permission screen을 home으로 설정
-    GoRoute(
-      name: "Permission screen",
-      path: '/permission',
-      builder: (context, state) => const PermissionScreen(),
-    )
-  ],);
+  final GoRouter _router = GoRouter(
+    routes: <GoRoute>[
+      // 임시 home screen
+      GoRoute(
+        name: "Home",
+        path: '/',
+        builder: (context, state) => const TempHomeScreen(),
+      ),
+      GoRoute(
+        name: "Permission screen",
+        path: '/permission',
+        builder: (context, state) => const PermissionScreen(),
+      ),
+      GoRoute(
+        name: "Authentication Screen",
+        path: '/authentication',
+        builder: (context, state) => const AuthenticationScreen(),
+      )
+    ],
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +56,6 @@ class MyApp extends StatelessWidget {
           // home: child,
         );
       },
-      // if the permission is already enabled or the user is already registered, directly go to the main screen
-      child: const PermissionScreen(),
     );
   }
 }
@@ -59,9 +66,21 @@ class TempHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
-      child: ElevatedButton(
-        onPressed: () => GoRouter.of(context).go('/permission'),
-        child: const Text("Go to permission screen"),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => GoRouter.of(context).go('/permission'),
+              child: const Text("Go to permission screen"),
+            ),
+            ElevatedButton(
+              onPressed: () => GoRouter.of(context).go('/authentication'),
+              child: const Text("Go to auth screen"),
+            ),
+          ],
+        ),
       ),
     );
   }
