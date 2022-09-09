@@ -13,17 +13,19 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
   // routers
-  final GoRouter _router = GoRouter(routes: <GoRoute>[
-    // temp Home page
-    GoRoute(name: "Home", path: '/', builder: (context, state) => const TempHomeScreen()),
+  final GoRouter _router = GoRouter(
+    routes: <GoRoute>[
+      // temp Home page
+      GoRoute(name: "Home", path: '/', builder: (context, state) => const TempHomeScreen()),
 
-    // 임시로 permission screen을 home으로 설정
-    GoRoute(
-      name: "Permission screen",
-      path: '/permission',
-      builder: (context, state) => const PermissionScreen(),
-    )
-  ]);
+      // 임시로 permission screen을 home으로 설정
+      GoRoute(
+        name: "Permission screen",
+        path: '/permission',
+        builder: (context, state) => const PermissionScreen(),
+      )
+    ],
+  );
 
   @override
   Widget build(BuildContext context) {
