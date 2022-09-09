@@ -56,20 +56,8 @@ class AuthenticationScreen extends StatelessWidget {
               style: bodyTextStyle,
               decoration: InputDecoration(
                 constraints: const BoxConstraints(maxHeight: 47),
-
                 prefixText: "010 ",
                 contentPadding: const EdgeInsets.all(9),
-                // suffixIconConstraints: const BoxConstraints(
-                //   maxWidth: 63,
-                //   maxHeight: 30,
-                // ),
-
-                //* 인증하기 button
-                // suffix: ElevatedButton(
-                //   onPressed: () {},
-                //   style: const ButtonStyle(tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                //   child: const Text("인증하기"),
-                // ),
                 suffixIcon: Padding(
                   padding: const EdgeInsets.all(9.0),
                   child: ElevatedButton(

@@ -4,6 +4,7 @@ import 'package:nolajyo_project/res/color_data.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
+import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
 
 void main() {
@@ -31,6 +32,11 @@ class MyApp extends StatelessWidget {
         name: "Authentication Screen",
         path: '/authentication',
         builder: (context, state) => const AuthenticationScreen(),
+      ),
+      GoRoute(
+        name: "Nickname Information Screen",
+        path: '/nicknameInfo',
+        builder: (context, state) => const NicknameInfoScreen(),
       )
     ],
   );
@@ -78,6 +84,10 @@ class TempHomeScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () => GoRouter.of(context).go('/authentication'),
               child: const Text("Go to auth screen"),
+            ),
+            ElevatedButton(
+              onPressed: () => GoRouter.of(context).go('/nicknameInfo'),
+              child: const Text("Go to nickname info screen"),
             ),
           ],
         ),
