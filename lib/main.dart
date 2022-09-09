@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
-        //
         return MaterialApp.router(
           routeInformationProvider: _router.routeInformationProvider,
           routeInformationParser: _router.routeInformationParser,
@@ -45,11 +44,9 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Noto Sans Kr',
             primarySwatch: createMaterialColor(mainColor),
           ),
-
           // home: child,
         );
       },
-
       // if the permission is already enabled or the user is already registered, directly go to the main screen
       child: const PermissionScreen(),
     );
