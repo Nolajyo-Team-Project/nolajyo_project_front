@@ -1,4 +1,4 @@
-package com.example.nolajyo_project
+package com.app.nolajyo
 
 import io.flutter.embedding.android.FlutterActivity
 
