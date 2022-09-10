@@ -11,7 +11,7 @@ class BaseScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 32, 30, 0),
+          padding: const EdgeInsets.fromLTRB(30, 32, 30, 30),
           child: child!,
         ),
       ),
