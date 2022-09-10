@@ -10,8 +10,7 @@ const placeHolderTextColor = Color(0xffbcbcbc);
 const errorColor = Color(0xffc87979);
 
 const buttonPressedColor = Color(0xffa5bded);
-const buttonDisabledColor = Color(0xff676767);
-
+const buttonTextDisabledColor = Color(0xff676767);
 
 // Convert Color to Material Color
 MaterialColor createMaterialColor(Color color) {
