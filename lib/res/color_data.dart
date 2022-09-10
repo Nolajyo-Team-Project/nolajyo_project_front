@@ -4,6 +4,7 @@ const mainColor = Color(0xff2c64f7);
 const secondColor = Color(0xffd2e1ff);
 const gray1 = Color(0xffe8e8e8);
 const gray2 = Color(0xffbababa);
+const gray3 = Color(0xff6E6E6E);
 
 const mainTextColor = Color(0xff676767);
 const placeHolderTextColor = Color(0xffbcbcbc);
