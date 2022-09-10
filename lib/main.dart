@@ -6,40 +6,14 @@ import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
 import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  // routers
-  final GoRouter _router = GoRouter(
-    routes: <GoRoute>[
-      // 임시 home screen
-      GoRoute(
-        name: "Home",
-        path: '/',
-        builder: (context, state) => const TempHomeScreen(),
-      ),
-      GoRoute(
-        name: "Permission screen",
-        path: '/permission',
-        builder: (context, state) => const PermissionScreen(),
-      ),
-      GoRoute(
-        name: "Authentication Screen",
-        path: '/authentication',
-        builder: (context, state) => const AuthenticationScreen(),
-      ),
-      GoRoute(
-        name: "Nickname Information Screen",
-        path: '/nicknameInfo',
-        builder: (context, state) => const NicknameInfoScreen(),
-      )
-    ],
-  );
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,11 +23,27 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
-        return MaterialApp.router(
-          routeInformationProvider: _router.routeInformationProvider,
-          routeInformationParser: _router.routeInformationParser,
-          routerDelegate: _router.routerDelegate,
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
+          initialRoute: '/',
+          getPages: [
+            GetPage(
+              name: '/',
+              page: () => const TempHomeScreen(),
+            ),
+            GetPage(
+              name: '/permission',
+              page: () => const PermissionScreen(),
+            ),
+            GetPage(
+              name: '/authentication',
+              page: () => const AuthenticationScreen(),
+            ),
+            GetPage(
+              name: '/nicknameInfo',
+              page: () => const NicknameInfoScreen(),
+            ),
+          ],
           title: '노라죠',
           theme: ThemeData(
             fontFamily: 'Noto Sans Kr',
@@ -78,15 +68,15 @@ class TempHomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => GoRouter.of(context).go('/permission'),
+              onPressed: () => Get.toNamed('/permission'),
               child: const Text("Go to permission screen"),
             ),
             ElevatedButton(
-              onPressed: () => GoRouter.of(context).go('/authentication'),
+              onPressed: () => Get.toNamed('/authentication'),
               child: const Text("Go to auth screen"),
             ),
             ElevatedButton(
-              onPressed: () => GoRouter.of(context).go('/nicknameInfo'),
+              onPressed: () => Get.toNamed('/nicknameInfo'),
               child: const Text("Go to nickname info screen"),
             ),
           ],
