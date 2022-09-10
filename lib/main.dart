@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:nolajyo_project/res/color_data.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
+import 'package:nolajyo_project/utils/utils.dart';
 import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
 import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
@@ -61,25 +61,31 @@ class TempHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseScreen(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () => Get.toNamed('/permission'),
-              child: const Text("Go to permission screen"),
-            ),
-            ElevatedButton(
-              onPressed: () => Get.toNamed('/authentication'),
-              child: const Text("Go to auth screen"),
-            ),
-            ElevatedButton(
-              onPressed: () => Get.toNamed('/nicknameInfo'),
-              child: const Text("Go to nickname info screen"),
-            ),
-          ],
+    return WillPopScope(
+      onWillPop: () async {
+        bool backResult = onBackPressed();
+        return await Future.value(backResult);
+      },
+      child: BaseScreen(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/permission'),
+                child: const Text("Go to permission screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/authentication'),
+                child: const Text("Go to auth screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/nicknameInfo'),
+                child: const Text("Go to nickname info screen"),
+              ),
+            ],
+          ),
         ),
       ),
     );
