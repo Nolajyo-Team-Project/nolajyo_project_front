@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nolajyo_project/model/concern_model.dart';
-import 'package:nolajyo_project/res/constants/constants.dart';
+import 'package:nolajyo_project/res/constants/font_data.dart';
 
 class SelectionTile extends StatelessWidget {
   final Concern concern;
