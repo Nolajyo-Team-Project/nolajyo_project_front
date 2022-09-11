@@ -1,5 +1,5 @@
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:nolajyo_project/res/color_data.dart';
+import 'package:nolajyo_project/res/constants/color_data.dart';
 
 DateTime? currentBackPressTime;
 

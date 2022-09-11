@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nolajyo_project/res/color_data.dart';
+import 'package:nolajyo_project/res/constants/color_data.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/utils/utils.dart';
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
             ),
             GetPage(
               name: '/nicknameInfo',
-              page: () => const NicknameInfoScreen(),
+              page: () => NicknameInfoScreen(),
             ),
             GetPage(
               name: '/birthAndAddress',

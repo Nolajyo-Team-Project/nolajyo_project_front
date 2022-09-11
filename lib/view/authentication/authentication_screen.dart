@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nolajyo_project/res/color_data.dart';
+import 'package:nolajyo_project/res/constants/color_data.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
-
-import '../../res/constants/constants.dart';
+import 'package:nolajyo_project/res/constants/font_data.dart';
 
 class AuthenticationScreen extends StatelessWidget {
   const AuthenticationScreen({super.key});
