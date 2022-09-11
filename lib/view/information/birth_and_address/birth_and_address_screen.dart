@@ -112,7 +112,7 @@ class _BirthAndAddressScreenState extends State<BirthAndAddressScreen> {
                 style: buttonTextStyle.copyWith(color: Colors.white),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

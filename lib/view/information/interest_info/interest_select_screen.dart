@@ -10,28 +10,46 @@ class InterestSelectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text("관심사를 알려주세요", style: titleTextStyle),
-            const SizedBox(
-              height: 37,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("관심사를 알려주세요", style: titleTextStyle),
+          const SizedBox(
+            height: 37,
+          ),
+          GridView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 8,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisSpacing: 25,
+              mainAxisSpacing: 0,
+              crossAxisCount: 2,
+              childAspectRatio: 1.1 / 1,
             ),
-            GridView.builder(
-              shrinkWrap: true,
-              itemCount: 8,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                crossAxisCount: 2,
+            itemBuilder: (context, index) => SelectionTile(
+              concernList[index],
+              selected: true,
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: MediaQuery.of(context).size.width - 60,
+            height: 70,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(19),
+                ),
               ),
-              itemBuilder: (context, index) => SelectionTile(
-                concern: concernList[index],
+              onPressed: () {},
+              child: Text(
+                "완료",
+                style: buttonTextStyle.copyWith(color: Colors.white),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
