@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nolajyo_project/data/local_datasource.dart';
-import 'package:nolajyo_project/res/color_data.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
+import 'package:nolajyo_project/res/constants/color_data.dart';
 import 'package:nolajyo_project/res/constants/constants.dart';
+import 'package:nolajyo_project/res/constants/font_data.dart';
 
 class BirthAndAddressScreen extends StatefulWidget {
   const BirthAndAddressScreen({super.key});
