@@ -5,6 +5,7 @@ import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/utils/utils.dart';
 import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
 import 'package:nolajyo_project/view/information/birth_and_address/birth_and_address_screen.dart';
+import 'package:nolajyo_project/view/information/interest_info/interest_select_screen.dart';
 import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
 import 'package:get/get.dart';
@@ -47,7 +48,11 @@ class MyApp extends StatelessWidget {
             GetPage(
               name: '/birthAndAddress',
               page: () => const BirthAndAddressScreen(),
-            )
+            ),
+            GetPage(
+              name: '/interestInfo',
+              page: () => const InterestSelectScreen(),
+            ),
           ],
           title: '노라죠',
           theme: ThemeData(
@@ -92,6 +97,10 @@ class TempHomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => Get.toNamed('/birthAndAddress'),
                 child: const Text("Go to birth and address info screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/interestInfo'),
+                child: const Text("Go to interest select info screen"),
               ),
             ],
           ),
