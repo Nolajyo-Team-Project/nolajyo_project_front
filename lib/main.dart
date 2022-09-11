@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/utils/utils.dart';
 import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
+import 'package:nolajyo_project/view/information/birth_and_address/birth_and_address_screen.dart';
 import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
 import 'package:get/get.dart';
@@ -43,6 +44,10 @@ class MyApp extends StatelessWidget {
               name: '/nicknameInfo',
               page: () => NicknameInfoScreen(),
             ),
+            GetPage(
+              name: '/birthAndAddress',
+              page: () => const BirthAndAddressScreen(),
+            )
           ],
           title: '노라죠',
           theme: ThemeData(
@@ -83,6 +88,10 @@ class TempHomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => Get.toNamed('/nicknameInfo'),
                 child: const Text("Go to nickname info screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/birthAndAddress'),
+                child: const Text("Go to birth and address info screen"),
               ),
             ],
           ),
