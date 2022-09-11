@@ -4,8 +4,17 @@ import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/res/constants/constants.dart';
 import 'package:nolajyo_project/view/information/interest_info/selection_tile.dart';
 
-class InterestSelectScreen extends StatelessWidget {
+class InterestSelectScreen extends StatefulWidget {
   const InterestSelectScreen({super.key});
+
+  @override
+  State<InterestSelectScreen> createState() => _InterestSelectScreenState();
+}
+
+class _InterestSelectScreenState extends State<InterestSelectScreen> {
+  void select() {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -19,9 +19,9 @@ class SelectionTile extends StatelessWidget {
       children: [
         Stack(
           children: [
-            // 선택되면 sel image를 보여줍니다.
-            if (selected) Image.asset('assets/img/concern_icons/concern_icon_sel.png'),
+            // 선택되면 sel image를 겹쳐서 보여줍니다.
             Image.asset('assets/img/concern_icons/concern_icon_1.png'),
+            if (selected) Image.asset('assets/img/concern_icons/concern_icon_sel.png'),
           ],
         ),
         const SizedBox(
