@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
-import 'package:nolajyo_project/res/constants/constants.dart';
+import 'package:nolajyo_project/res/constants/font_data.dart';
 import 'package:nolajyo_project/view/persmission/components/permission_info.dart';
 
 class PermissionScreen extends StatelessWidget {
