@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nolajyo_project/model/concern_model.dart';
+import 'package:nolajyo_project/models/concern_model.dart';
 import 'package:nolajyo_project/res/constants/font_data.dart';
 
 class SelectionTile extends StatelessWidget {

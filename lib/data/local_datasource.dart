@@ -1,4 +1,4 @@
-import 'package:nolajyo_project/model/concern_model.dart';
+import 'package:nolajyo_project/models/concern_model.dart';
 
 const List<String> regionList = [
   '서울특별시',
