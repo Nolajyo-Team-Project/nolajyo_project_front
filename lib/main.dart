@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Noto Sans Kr',
             primarySwatch: createMaterialColor(mainColor),
           ),
+          navigatorKey: GlobalUtils.navigatorKey,
           // home: child,
         );
       },
@@ -73,7 +74,7 @@ class TempHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        bool backResult = onBackPressed();
+        bool backResult = GlobalUtils.onBackPressed();
         return await Future.value(backResult);
       },
       child: BaseScreen(
