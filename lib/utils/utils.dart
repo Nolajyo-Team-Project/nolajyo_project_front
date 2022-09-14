@@ -7,13 +7,11 @@ import 'package:nolajyo_project/res/constants/color_data.dart';
 import 'package:nolajyo_project/res/constants/font_data.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-DateTime? currentBackPressTime;
-
-final navigatorKey = GlobalKey<NavigatorState>();
-
 class GlobalUtils {
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
+
+  static DateTime? currentBackPressTime;
 
   // 홈(main) 페이지에서 뒤로가기 두번 클릭시 앱을 종료하고 boolean을 리턴하는 함수
   // 버튼 1번 클릭 시 토스트로 메시지 띄워주고 2초 안에 재 클릭 시 앱 종료
