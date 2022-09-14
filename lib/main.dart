@@ -1,30 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:nolajyo_project/res/color_data.dart';
+import 'package:nolajyo_project/res/constants/color_data.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
+import 'package:nolajyo_project/utils/utils.dart';
 import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
+import 'package:nolajyo_project/view/information/birth_and_address/birth_and_address_screen.dart';
+import 'package:nolajyo_project/view/information/interest_info/interest_select_screen.dart';
+import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  // routers
-  final GoRouter _router = GoRouter(routes: <GoRoute>[
-    // temp Home page
-    GoRoute(name: "Home", path: '/', builder: (context, state) => const AuthenticationScreen()),
-
-    // 임시로 permission screen을 home으로 설정
-    GoRoute(
-      name: "Permission screen",
-      path: '/permission',
-      builder: (context, state) => const PermissionScreen(),
-    )
-  ]);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +25,35 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
-        return MaterialApp.router(
-          routeInformationProvider: _router.routeInformationProvider,
-          routeInformationParser: _router.routeInformationParser,
-          routerDelegate: _router.routerDelegate,
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
+          initialRoute: '/',
+          getPages: [
+            GetPage(
+              name: '/',
+              page: () => const TempHomeScreen(),
+            ),
+            GetPage(
+              name: '/permission',
+              page: () => const PermissionScreen(),
+            ),
+            GetPage(
+              name: '/authentication',
+              page: () => const AuthenticationScreen(),
+            ),
+            GetPage(
+              name: '/nicknameInfo',
+              page: () => NicknameInfoScreen(),
+            ),
+            GetPage(
+              name: '/birthAndAddress',
+              page: () => const BirthAndAddressScreen(),
+            ),
+            GetPage(
+              name: '/interestInfo',
+              page: () => const InterestSelectScreen(),
+            ),
+          ],
           title: '노라죠',
           theme: ThemeData(
             fontFamily: 'Noto Sans Kr',
@@ -47,8 +62,6 @@ class MyApp extends StatelessWidget {
           // home: child,
         );
       },
-      // if the permission is already enabled or the user is already registered, directly go to the main screen
-      child: const PermissionScreen(),
     );
   }
 }
@@ -58,10 +71,40 @@ class TempHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseScreen(
-      child: ElevatedButton(
-        onPressed: () => GoRouter.of(context).go('/permission'),
-        child: const Text("Go to permission screen"),
+    return WillPopScope(
+      onWillPop: () async {
+        bool backResult = onBackPressed();
+        return await Future.value(backResult);
+      },
+      child: BaseScreen(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/permission'),
+                child: const Text("Go to permission screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/authentication'),
+                child: const Text("Go to auth screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/nicknameInfo'),
+                child: const Text("Go to nickname info screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/birthAndAddress'),
+                child: const Text("Go to birth and address info screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/interestInfo'),
+                child: const Text("Go to interest select info screen"),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

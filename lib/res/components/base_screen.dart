@@ -10,10 +10,11 @@ class BaseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 32, 30, 0),
-        child: child!,
-      )),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(30, 32, 30, 30),
+          child: child!,
+        ),
+      ),
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation,
     );

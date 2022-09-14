@@ -4,14 +4,14 @@ const mainColor = Color(0xff2c64f7);
 const secondColor = Color(0xffd2e1ff);
 const gray1 = Color(0xffe8e8e8);
 const gray2 = Color(0xffbababa);
+const gray3 = Color(0xff6E6E6E);
 
 const mainTextColor = Color(0xff676767);
 const placeHolderTextColor = Color(0xffbcbcbc);
 const errorColor = Color(0xffc87979);
 
 const buttonPressedColor = Color(0xffa5bded);
-const buttonDisabledColor = Color(0xff676767);
-
+const buttonTextDisabledColor = Color(0xff676767);
 
 // Convert Color to Material Color
 MaterialColor createMaterialColor(Color color) {
