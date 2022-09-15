@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
-import 'package:nolajyo_project/res/constants/constants.dart';
+import 'package:nolajyo_project/res/constants/font_data.dart';
+import 'package:nolajyo_project/utils/utils.dart';
 import 'package:nolajyo_project/view/persmission/components/permission_info.dart';
 
 class PermissionScreen extends StatelessWidget {
@@ -46,7 +48,9 @@ class PermissionScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(19),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () async {
+                GlobalUtils.getPermission('/authentication');
+              },
               child: Text(
                 "확인",
                 style: buttonTextStyle.copyWith(color: Colors.white),

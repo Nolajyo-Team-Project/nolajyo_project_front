@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nolajyo_project/res/color_data.dart';
-import 'package:nolajyo_project/res/constants/constants.dart';
+import 'package:nolajyo_project/res/constants/color_data.dart';
+import 'package:nolajyo_project/res/constants/font_data.dart';
 
 class PermissionInfo extends StatelessWidget {
   final String kind, description;
