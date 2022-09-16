@@ -7,7 +7,7 @@ import 'package:nolajyo_project/res/constants/font_data.dart';
 import 'package:nolajyo_project/view/information/nickname/components/gender_button.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:nolajyo_project/view_model/nickname_info_viewmodel.dart';
+import 'package:nolajyo_project/view_model/information/nickname/nickname_info_viewmodel.dart';
 
 class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
   NicknameInfoScreen({super.key});
@@ -17,8 +17,8 @@ class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
   Widget build(BuildContext context) {
     final controller = Get.put(NicknameInfoViewModel());
     return BaseScreen(
-      floatingActionButton: Obx(() {
-        return SizedBox(
+      floatingActionButton: Obx(
+        () => SizedBox(
           width: 329,
           height: 70,
           child: ElevatedButton(
@@ -32,15 +32,15 @@ class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
                 ? null
                 : () {
                     var key = _fbKey.currentState!;
-                    if (_fbKey.currentState!.saveAndValidate()) {}
+                    if (key.saveAndValidate()) {}
                   },
             child: const Text(
               "다음",
               style: buttonTextStyle,
             ),
           ),
-        );
-      }),
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       child: FormBuilder(
         key: _fbKey,
@@ -64,6 +64,7 @@ class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
             ),
             FormBuilderTextField(
               name: 'name',
+              style: bodyTextStyle,
               maxLength: 16,
               controller: controller.nicknameEditingController,
               keyboardType: TextInputType.text,
@@ -119,8 +120,8 @@ class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
             const SizedBox(
               height: 18,
             ),
-            Obx(() {
-              return Row(
+            Obx(
+              () => Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(controller.genderList.length, (i) {
                   return GenderButton(
@@ -131,8 +132,8 @@ class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
                     },
                   );
                 }),
-              );
-            }),
+              ),
+            ),
           ],
         ),
       ),
