@@ -30,3 +30,14 @@ List<Concern> concernList = [
   Concern(name: "독서", image: "assets/img/concern_icons/concern_icon_7.png"),
   Concern(name: "문화생활", image: "assets/img/concern_icons/concern_icon_8.png"),
 ];
+
+List<Concern> homeConcernList = [
+  Concern(name: "제태크", image: 'assets/img/home_assets/con_icon_1.png'),
+  Concern(name: "운동", image: "assets/img/home_assets/con_icon_2.png"),
+  Concern(name: "반려동물", image: "assets/img/home_assets/con_icon_3.png"),
+  Concern(name: "스터디", image: "assets/img/home_assets/con_icon_4.png"),
+  Concern(name: "육아", image: "assets/img/home_assets/con_icon_5.png"),
+  Concern(name: "창작", image: "assets/img/home_assets/con_icon_6.png"),
+  Concern(name: "독서", image: "assets/img/home_assets/con_icon_7.png"),
+  Concern(name: "문화생활", image: "assets/img/home_assets/con_icon_8.png"),
+];

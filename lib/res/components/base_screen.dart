@@ -12,7 +12,7 @@ class BaseScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(30, 32, 30, 30),
-          child: child!,
+          child: child,
         ),
       ),
       floatingActionButton: floatingActionButton,
