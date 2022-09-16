@@ -20,6 +20,7 @@ class GenderButton extends StatelessWidget {
       height: 47,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          splashFactory: NoSplash.splashFactory,
           backgroundColor: selected ? mainColor : gray1,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
@@ -27,7 +28,7 @@ class GenderButton extends StatelessWidget {
         child: Text(
           gender,
           style: selected
-              ? bodyTextStyle.copyWith(color: Colors.white)
+              ? bodyTextStyle.copyWith(color: Colors.white) 
               : bodyTextStyle,
         ),
       ),

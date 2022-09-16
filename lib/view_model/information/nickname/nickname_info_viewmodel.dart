@@ -6,9 +6,9 @@ import 'package:nolajyo_project/res/constants/constants.dart';
 class NicknameInfoViewModel extends GetxController {
   final TextEditingController nicknameEditingController =
       TextEditingController();
-  Rx<Gender> genderStatus = Gender.male.obs;
-  List genderList = ["남성", "여성", "비공개"].obs;
-  RxString nicknameValue = ''.obs;
+  final Rx<Gender> genderStatus = Gender.male.obs;
+  final List genderList = ["남성", "여성", "비공개"].obs;
+  final RxString nicknameValue = ''.obs;
 
   @override
   void onInit() {
