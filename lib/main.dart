@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
             ),
             GetPage(
               name: '/birthAndAddress',
-              page: () => const BirthAndAddressScreen(),
+              page: () => BirthAndAddressScreen(),
             ),
             GetPage(
               name: '/interestInfo',

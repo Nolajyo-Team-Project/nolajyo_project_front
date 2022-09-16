@@ -19,6 +19,8 @@ dependencies:
   fluttertoast: ^8.0.9
   flutter_form_builder: ^7.6.0
   form_builder_validators: ^8.3.0
+  flutter_datetime_picker: ^1.5.1
+  dropdown_search: ^5.0.2
 
   cupertino_icons: ^1.0.2
 

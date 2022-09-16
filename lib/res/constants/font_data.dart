@@ -27,3 +27,10 @@ const bodyWhiteTextStyle = TextStyle(
   fontSize: 14,
   color: white,
 );
+
+const bodyMainTextStyle = TextStyle(
+  fontFamily: 'Noto Sans Kr',
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  color: mainColor,
+);
