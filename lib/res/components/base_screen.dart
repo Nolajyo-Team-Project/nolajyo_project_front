@@ -4,7 +4,12 @@ class BaseScreen extends StatelessWidget {
   final Widget? child;
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
-  const BaseScreen({super.key, this.child, this.floatingActionButton, this.floatingActionButtonLocation});
+  const BaseScreen({
+    super.key,
+    this.child,
+    this.floatingActionButton,
+    this.floatingActionButtonLocation,
+  });
 
   @override
   Widget build(BuildContext context) {
