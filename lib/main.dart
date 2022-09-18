@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/utils/utils.dart';
 import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
+import 'package:nolajyo_project/view/create_class/create_class_screen.dart';
 import 'package:nolajyo_project/view/information/birth_and_address/birth_and_address_screen.dart';
 import 'package:nolajyo_project/view/information/interest_info/interest_select_screen.dart';
 import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
@@ -52,6 +53,10 @@ class MyApp extends StatelessWidget {
             GetPage(
               name: '/interestInfo',
               page: () => const InterestSelectScreen(),
+            ),
+            GetPage(
+              name: '/createClass',
+              page: () => CreateClassScreen(),
             ),
           ],
           title: '노라죠',
@@ -102,6 +107,10 @@ class TempHomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => Get.toNamed('/interestInfo'),
                 child: const Text("Go to interest select info screen"),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.toNamed('/createClass'),
+                child: const Text("Go to create class info screen"),
               ),
             ],
           ),
