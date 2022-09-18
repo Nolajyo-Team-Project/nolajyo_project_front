@@ -38,11 +38,13 @@ Getx 상태관리 패키지를 사용하며 mvvm 디자인 패턴을 채택하�
 
 # C**ode Convention**
 
-Flutter에서는 코딩에 대한 구체적인 표준이나 규범을 정의하지 않고 있습니다. 하지만 Flutter는 Dart 언어를 사용하기에 되도록이면 [Dart의 Coding Standard](https://dart.dev/guides/language/effective-dart/style)를 준수하여 작성하려고 합니다.
+Flutter에서는 코딩에 대한 구체적인 표준이나 규범을 정의하지 않고 있습니다. 하지만 Flutter는 Dart 언어를 사용하기에 되도록이면 [Dart의 Coding Standard](https://dart.dev/guides/language/effective-dart/style)를 준수하여 작성하려고 합니다. 
 
 플러터 린트가 적용되어 있어 주로 자주 사용 하거나 주의해야할 부분만 추려 간단하게 정리했습니다. 자세한 내용은 [https://dart.dev/guides/language/effective-dart/style](https://dart.dev/guides/language/effective-dart/style) 해당 페이지에서 확인 가능합니다.
 
-## **식별자 (Identifiers)**
+## Dart Code Convention
+
+- **식별자 (Identifiers)**
 
 Dart에서는 UppderCamelCase, lowerCamelCase, lowercase_with_underscores 네이밍 규칙을 사용합니다.
 
@@ -50,7 +52,8 @@ Dart에서는 UppderCamelCase, lowerCamelCase, lowercase_with_underscores 네이
 | --- | --- |
 | lowerCamelCase (camelCase) | 소문자로 시작하며, 각 단어의 시작 문자를 대문자로 합니다. 주로 함수나 변수에 사용합니다. |
 | lowercase_with_underscores (snake case) |  소문자만 사용하며 단어의 구분은 언더스코어(_)를 사용합니다. 대문자나 다른 구분자는 사용하지 않습니다. 주로 폴더명과 파일명에 사용합니다. |
-1. ****Type의 경우 UpperCamelCase를 사용합니다.**
+
+### 1) **Type의 경우 UpperCamelCase를 사용합니다.**
 
 Class, Enum, Typedef, Type 매개변수는 UpperCamelCase를 사용합니다.
 
@@ -66,7 +69,7 @@ class Foo {
 }
 ```
 
-1. ****소스파일, 디렉터리, 라이브러리, 패키지는 lowercase_with_underscores를 사용합니다.**
+### 2) **소스파일, 디렉터리, 라이브러리, 패키지는 lowercase_with_underscores를 사용합니다.**
 
 ```dart
 library peg_parser.source_scanner;
@@ -76,9 +79,9 @@ import 'file_system.dart';
 import 'slider_menu.dart';
 ```
 
-1. ****상수에는 lowerCamelCase 사용합니다.**
+### 3) **상수에는 lowerCamelCase 사용합니다.**
 
-enum 값을 포함하여 상수에는 lowerCamelCase를 사용해주세요.
+- enum 값을 포함하여 상수에는 lowerCamelCase를 사용해주세요.
 
 ```dart
 //Good
@@ -100,7 +103,29 @@ class Dice {
 }
 ```
 
-📌 그외 여러가지 있지만, 사실 제일 중요한 두가지만 지키면 좋을 것 같습니다!
+## Flutter Code Convention
+
+### 1) 괄호를 닫을때 콤마(,)를 넣는거를 상시 해주세요!
+
+- 닫는 괄호마다 콤마를 추가하여 들여쓰기를 해준다면 가독성이 매우 올라갑니다!
+
+### 2) 위젯간의 띄어쓰기와 주석은 최대한 자제 부탁드릴께요!
+
+- 주석을 넣더라도 위젯의 주석이나 바로 알 수 있는 함수의 주석은 넣을 필요는 없습니다! 오히려 코드의 가독성만 떨어지게 하는 원인이 될 수 있습니다.
+- 주석은 최대한 줄이고 코드가 길어지거나 복잡도가 오를때, 그리고 코드의 의존성이 강해졌을때 사용하는 편이 좋습니다.
+- 주석을 추가하면 해당 코드가 변경되는 순간 주석도 같이 관리해야하는 불편함과 코드보다 주석을 우선시 하게 보려는 심리 때문에 되도록 **주석 없이도 알 수 있는 코드를 작성하는게 베스트 입니다.**
+
+### 3) 콤마가 있으면 항상 들여쓰기 부탁드릴게요!
+
+- 아래와 같이 코드가 길어질때(파라미터의 갯수가 많을때) 들여쓰기를 넣으면 한 줄로 있을때보다 가독성이 좋습니다.
+
+### 4) 상대경로, 절대경로 하나로 통일 해주세요!
+
+- 아래와 같은 경우 상대 경로, 절대 경로를 같이 사용하는데, **일관성을 최대한 유지하는것을 잊지 말아주세요!**
+- 상대 경로와 절대 경로의 각자 취향이 있고 장단점이 존재하지만, 저 같은 경우는 절대경로를 주로 사용 하는 편입니다.
+    - 절대 경로를 사용하면 **직관적으로 어디서 사용**하는지 알기가 쉽고, **수정이 용이**하여 저는 절대 경로를 사용하는 편입니다.
+
+📌 그외 여러가지 있지만, 사실 제일 중요한 두가지만 지키면 좋을 것 같습니다! 
 
 - **일관성을 최대한 유지**
 - **가독성을 높이며 최대한 간단하게**
@@ -195,5 +220,9 @@ class Dice {
 | permission_handler | ^10.0.0 | 간단하게 사용 할 수 있는 권한 요청 라이브러리 | https://pub.dev/packages/permission_handler |
 | intl | ^0.17.0 | date, time, number format 등 여러가지 편의성 기능 제공 | https://pub.dev/packages/intl |
 | flutter_dotenv | ^5.0.2 | 환경변수 파일을 만들어 URL,포트넘버, API_KEY등을 저장시켜 소스코드 내에 하드코딩하지 않고 사용하기 위해 사용 | https://pub.dev/packages/flutter_dotenv |
-| flutter_screenutl | ^5.5.4 | 디자인 사이즈과 플러터의 스크린 사이즈 간의 차이를 줄이기 위해 사용 | https://pub.dev/packages/flutter_screenutil
-| go_router | ^4.4.1 | 페이지 라우팅에 사용 | https://pub.dev/packages/go_router
+| flutter_screenutl | ^5.5.4 | 디자인 사이즈과 플러터의 스크린 사이즈 간의 차이를 줄이기 위해 사용 | https://pub.dev/packages/flutter_screenutil |
+| fluttertoast | ^8.0.9 | toast 메세지를 지원해주는 라이브러리, 여러 toast 메세지를 띄울때 사용 | https://pub.dev/packages/fluttertoast |
+| flutter_form_builder | ^7.6.0 | 플러터의 여러가지 form들을 편하게 사용 할 수 있는 라이브러리 (validator, build a form) | https://pub.dev/packages/flutter_form_builder |
+| form_builder_validators | ^8.3.0 | flutter_form_builder의 라이브러리, 여러가지 유효성 검사 관련된 메소드를 지원한다. | https://pub.dev/packages/form_builder_validators |
+| flutter_datetime_picker | ^1.5.1 | 플러터의 datetime picker 위젯을 커스텀 하기 위해 사용 | https://pub.dev/packages/flutter_datetime_picker |
+| dropdown_search | ^5.0.2 | 드랍다운 위젯을 커스텀 하기 위해 사용 | https://pub.dev/packages/dropdown_search |
