@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nolajyo_project/data/local_datasource.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
 import 'package:nolajyo_project/res/constants/font_data.dart';
+import 'package:nolajyo_project/view/home/components/home_concern.dart';
+import 'package:nolajyo_project/view/home/components/home_room.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,42 +19,63 @@ class HomeScreen extends StatelessWidget {
           size: 40,
         ),
       ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              const Text("우리 동네 HOT 모임", style: titleTextStyle),
-              const SizedBox(
-                width: 8,
-              ),
-              const Spacer(),
-              IconButton(
-                padding: const EdgeInsets.all(0),
-                onPressed: () {},
-                icon: const Icon(Icons.search),
-              ),
-              IconButton(
-                padding: const EdgeInsets.all(0),
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
-                  size: 30,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Text("우리 동네 HOT 모임", style: titleTextStyle),
+                const SizedBox(
+                  width: 8,
                 ),
-              ),
-            ],
-          ),
-          GridView.builder(
-            shrinkWrap: true,
-            itemCount: 8,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              mainAxisSpacing: 33,
-              crossAxisSpacing: 28,
+                const Spacer(),
+                IconButton(
+                  padding: const EdgeInsets.all(0),
+                  onPressed: () {},
+                  icon: const Icon(Icons.search),
+                ),
+                IconButton(
+                  padding: const EdgeInsets.all(0),
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.menu,
+                    size: 30,
+                  ),
+                ),
+              ],
             ),
-            itemBuilder: (context, index) => const ColoredBox(color: Colors.red),
-          )
-        ],
+            SizedBox(
+              height: 35.w,
+            ),
+            GridView.builder(
+              shrinkWrap: true,
+              itemCount: 8,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                mainAxisSpacing: 27.61.h,
+                crossAxisSpacing: 28.w,
+              ),
+              itemBuilder: (context, index) => HomeConcern(
+                concern: homeConcernList[index],
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              height: 35.h,
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: homeMeetingList.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.only(bottom: 19.h),
+                  child: HomeRoomTile(homeMeetingList[index]),
+                );
+              },
+            )
+          ],
+        ),
       ),
     );
   }

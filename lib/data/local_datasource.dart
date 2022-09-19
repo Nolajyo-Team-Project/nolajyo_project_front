@@ -1,4 +1,5 @@
 import 'package:nolajyo_project/models/concern_model.dart';
+import 'package:nolajyo_project/models/home_meeting_model.dart';
 
 const List<String> regionList = [
   '서울특별시',
@@ -40,4 +41,13 @@ List<Concern> homeConcernList = [
   Concern(name: "창작", image: "assets/img/home_assets/con_icon_6.png"),
   Concern(name: "독서", image: "assets/img/home_assets/con_icon_7.png"),
   Concern(name: "문화생활", image: "assets/img/home_assets/con_icon_8.png"),
+];
+
+List<HomeMeeting> homeMeetingList = [
+  HomeMeeting(title: '제목 어쩌고 저쩌고', region: '강남구', image: 'assets/img/home_assets/Room.png', people: 10),
+  HomeMeeting(title: '제목 어쩌고 저쩌고 2', region: '서초구', image: 'assets/img/home_assets/Room.png', people: 10),
+  HomeMeeting(title: '제목 어쩌고 저쩌고 3', region: '마포구', image: 'assets/img/home_assets/Room.png', people: 10),
+  HomeMeeting(title: '제목 어쩌고 저쩌고 4', region: '은평구', image: 'assets/img/home_assets/Room.png', people: 10),
+  HomeMeeting(title: '제목 어쩌고 저쩌고 5', region: '구구', image: 'assets/img/home_assets/Room.png', people: 10),
+  HomeMeeting(title: '제목 어쩌고 저쩌고 6', region: '비둘기야 밥먹자', image: 'assets/img/home_assets/Room.png', people: 10),
 ];
