@@ -18,7 +18,7 @@ class HomeConcern extends StatelessWidget {
         children: [
           Image.asset(concern.image),
           SizedBox(
-            height: 8.43.h,
+            height: 8.h,
           ),
           Text(concern.name)
         ],
