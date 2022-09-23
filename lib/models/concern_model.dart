@@ -1,9 +1,12 @@
-class Concern {
-  final String name;
-  final String image;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Concern({
-    required this.name,
-    required this.image,
-  });
+part 'concern_model.freezed.dart';
+
+@freezed
+class Concern with _$Concern {
+  const factory Concern({
+    required String name,
+    required String image,
+  }) = _Concern;
 }
+

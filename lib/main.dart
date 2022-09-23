@@ -7,6 +7,7 @@ import 'package:nolajyo_project/view/authentication/authentication_screen.dart';
 import 'package:nolajyo_project/view/create_class/create_class_screen.dart';
 import 'package:nolajyo_project/view/home/home_screen.dart';
 import 'package:nolajyo_project/view/information/birth_and_address/birth_and_address_screen.dart';
+import 'package:nolajyo_project/view/information/interest_info/interest_select_screen.dart';
 import 'package:nolajyo_project/view/information/nickname/nickname_info_screen.dart';
 import 'package:nolajyo_project/view/persmission/permission_screen.dart';
 import 'package:get/get.dart';

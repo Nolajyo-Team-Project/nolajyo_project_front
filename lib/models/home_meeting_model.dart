@@ -1,10 +1,13 @@
-class HomeMeeting {
-  final String region, title, image;
-  final int people;
-  HomeMeeting({
-    required this.title,
-    required this.region,
-    required this.image,
-    required this.people,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'home_meeting_model.freezed.dart';
+
+@freezed
+class HomeMeeting with _$HomeMeeting {
+  const factory HomeMeeting({
+    required String title,
+    required String region,
+    required String image,
+    required int people,
+  }) = _HomeMeeting;
 }

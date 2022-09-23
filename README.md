@@ -196,4 +196,4 @@ class Dice {
 | intl | ^0.17.0 | date, time, number format 등 여러가지 편의성 기능 제공 | https://pub.dev/packages/intl |
 | flutter_dotenv | ^5.0.2 | 환경변수 파일을 만들어 URL,포트넘버, API_KEY등을 저장시켜 소스코드 내에 하드코딩하지 않고 사용하기 위해 사용 | https://pub.dev/packages/flutter_dotenv |
 | flutter_screenutl | ^5.5.4 | 디자인 사이즈과 플러터의 스크린 사이즈 간의 차이를 줄이기 위해 사용 | https://pub.dev/packages/flutter_screenutil
-| go_router | ^4.4.1 | 페이지 라우팅에 사용 | https://pub.dev/packages/go_router
+| freezed | ^2.1.1 | Code generator | flutter pub run build_runner build 으로 실행
