@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/models/concern_model.dart';
 
 class HomeConcern extends StatelessWidget {
-  final Concern concern;
+  final ConcernModel concern;
   final VoidCallback onPressed;
   const HomeConcern({required this.concern, required this.onPressed, super.key});
 

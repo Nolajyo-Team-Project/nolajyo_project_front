@@ -3,11 +3,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_meeting_model.freezed.dart';
 
 @freezed
-class HomeMeeting with _$HomeMeeting {
-  const factory HomeMeeting({
+class MeetingModel with _$MeetingModel {
+  const factory MeetingModel({
     required String title,
     required String region,
     required String image,
     required int people,
-  }) = _HomeMeeting;
+  }) = _MeetingModel;
 }

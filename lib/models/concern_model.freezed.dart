@@ -15,28 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$Concern {
+mixin _$ConcernModel {
   String get name => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ConcernCopyWith<Concern> get copyWith => throw _privateConstructorUsedError;
+  $ConcernModelCopyWith<ConcernModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ConcernCopyWith<$Res> {
-  factory $ConcernCopyWith(Concern value, $Res Function(Concern) then) =
-      _$ConcernCopyWithImpl<$Res>;
+abstract class $ConcernModelCopyWith<$Res> {
+  factory $ConcernModelCopyWith(
+          ConcernModel value, $Res Function(ConcernModel) then) =
+      _$ConcernModelCopyWithImpl<$Res>;
   $Res call({String name, String image});
 }
 
 /// @nodoc
-class _$ConcernCopyWithImpl<$Res> implements $ConcernCopyWith<$Res> {
-  _$ConcernCopyWithImpl(this._value, this._then);
+class _$ConcernModelCopyWithImpl<$Res> implements $ConcernModelCopyWith<$Res> {
+  _$ConcernModelCopyWithImpl(this._value, this._then);
 
-  final Concern _value;
+  final ConcernModel _value;
   // ignore: unused_field
-  final $Res Function(Concern) _then;
+  final $Res Function(ConcernModel) _then;
 
   @override
   $Res call({
@@ -57,29 +59,32 @@ class _$ConcernCopyWithImpl<$Res> implements $ConcernCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_ConcernCopyWith<$Res> implements $ConcernCopyWith<$Res> {
-  factory _$$_ConcernCopyWith(
-          _$_Concern value, $Res Function(_$_Concern) then) =
-      __$$_ConcernCopyWithImpl<$Res>;
+abstract class _$$_ConcernModelCopyWith<$Res>
+    implements $ConcernModelCopyWith<$Res> {
+  factory _$$_ConcernModelCopyWith(
+          _$_ConcernModel value, $Res Function(_$_ConcernModel) then) =
+      __$$_ConcernModelCopyWithImpl<$Res>;
   @override
   $Res call({String name, String image});
 }
 
 /// @nodoc
-class __$$_ConcernCopyWithImpl<$Res> extends _$ConcernCopyWithImpl<$Res>
-    implements _$$_ConcernCopyWith<$Res> {
-  __$$_ConcernCopyWithImpl(_$_Concern _value, $Res Function(_$_Concern) _then)
-      : super(_value, (v) => _then(v as _$_Concern));
+class __$$_ConcernModelCopyWithImpl<$Res>
+    extends _$ConcernModelCopyWithImpl<$Res>
+    implements _$$_ConcernModelCopyWith<$Res> {
+  __$$_ConcernModelCopyWithImpl(
+      _$_ConcernModel _value, $Res Function(_$_ConcernModel) _then)
+      : super(_value, (v) => _then(v as _$_ConcernModel));
 
   @override
-  _$_Concern get _value => super._value as _$_Concern;
+  _$_ConcernModel get _value => super._value as _$_ConcernModel;
 
   @override
   $Res call({
     Object? name = freezed,
     Object? image = freezed,
   }) {
-    return _then(_$_Concern(
+    return _then(_$_ConcernModel(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -94,8 +99,8 @@ class __$$_ConcernCopyWithImpl<$Res> extends _$ConcernCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Concern implements _Concern {
-  const _$_Concern({required this.name, required this.image});
+class _$_ConcernModel implements _ConcernModel {
+  const _$_ConcernModel({required this.name, required this.image});
 
   @override
   final String name;
@@ -104,14 +109,14 @@ class _$_Concern implements _Concern {
 
   @override
   String toString() {
-    return 'Concern(name: $name, image: $image)';
+    return 'ConcernModel(name: $name, image: $image)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Concern &&
+            other is _$_ConcernModel &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.image, image));
   }
@@ -124,13 +129,14 @@ class _$_Concern implements _Concern {
 
   @JsonKey(ignore: true)
   @override
-  _$$_ConcernCopyWith<_$_Concern> get copyWith =>
-      __$$_ConcernCopyWithImpl<_$_Concern>(this, _$identity);
+  _$$_ConcernModelCopyWith<_$_ConcernModel> get copyWith =>
+      __$$_ConcernModelCopyWithImpl<_$_ConcernModel>(this, _$identity);
 }
 
-abstract class _Concern implements Concern {
-  const factory _Concern(
-      {required final String name, required final String image}) = _$_Concern;
+abstract class _ConcernModel implements ConcernModel {
+  const factory _ConcernModel(
+      {required final String name,
+      required final String image}) = _$_ConcernModel;
 
   @override
   String get name;
@@ -138,6 +144,6 @@ abstract class _Concern implements Concern {
   String get image;
   @override
   @JsonKey(ignore: true)
-  _$$_ConcernCopyWith<_$_Concern> get copyWith =>
+  _$$_ConcernModelCopyWith<_$_ConcernModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

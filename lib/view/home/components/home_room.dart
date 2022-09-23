@@ -4,8 +4,8 @@ import 'package:nolajyo_project/models/home_meeting_model.dart';
 import 'package:nolajyo_project/res/constants/font_data.dart';
 
 class HomeRoomTile extends StatelessWidget {
-  final HomeMeeting homeMeeting;
-  const HomeRoomTile(this.homeMeeting, {super.key});
+  final MeetingModel meeting;
+  const HomeRoomTile(this.meeting, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class HomeRoomTile extends StatelessWidget {
           SizedBox(
             width: 96.w,
             height: 71.h,
-            child: FittedBox(fit: BoxFit.fill, child: Image.asset(homeMeeting.image)),
+            child: FittedBox(fit: BoxFit.fill, child: Image.asset(meeting.image)),
           ),
           SizedBox(
             width: 16.w,
@@ -26,21 +26,21 @@ class HomeRoomTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                homeMeeting.region,
+                meeting.region,
                 style: bodyTextStyle,
               ),
               SizedBox(
                 height: 7.h,
               ),
               Text(
-                homeMeeting.title,
+                meeting.title,
                 style: bodyTextStyle,
               ),
               SizedBox(
                 height: 7.h,
               ),
               Text(
-                '${homeMeeting.people}명',
+                '${meeting.people}명',
                 style: bodyTextStyle,
               ),
             ],
