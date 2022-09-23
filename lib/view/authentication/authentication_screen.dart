@@ -9,6 +9,8 @@ class AuthenticationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
+      title: "전화번호를 인증해주세요",
+      isHomeScreen: false,
       // 다음 button
       floatingActionButton: SizedBox(
         width: 329,
@@ -33,13 +35,6 @@ class AuthenticationScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //* title
-            const Text("전화번호를 인증해주세요", style: titleTextStyle),
-
-            const SizedBox(
-              height: 49,
-            ),
-
             const Text(
               "휴대폰 전화번호를 입력해 주세요.",
               style: bodyTextStyle,

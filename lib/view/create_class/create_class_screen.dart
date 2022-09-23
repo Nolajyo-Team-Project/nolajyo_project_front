@@ -32,6 +32,8 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
   Widget build(BuildContext context) {
     final controller = Get.put(CreateClassViewModel());
     return BaseScreen(
+      title: "모임 만들기",
+      isHomeScreen: false,
       floatingActionButton: SizedBox(
         width: 329,
         height: 70,
@@ -60,13 +62,6 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
           child: ListView(
             physics: const BouncingScrollPhysics(),
             children: [
-              const Text(
-                "모임 만들기",
-                style: titleTextStyle,
-              ),
-              const SizedBox(
-                height: 105,
-              ),
               const Text(
                 "모임지역을 선택해 주세요.",
                 style: bodyTextStyle,

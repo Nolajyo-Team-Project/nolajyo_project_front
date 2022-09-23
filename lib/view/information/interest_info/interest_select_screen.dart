@@ -19,10 +19,11 @@ class _InterestSelectScreenState extends State<InterestSelectScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
+      title: "관심사를 알려주세요",
+      isHomeScreen: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("관심사를 알려주세요", style: titleTextStyle),
           const SizedBox(
             height: 37,
           ),

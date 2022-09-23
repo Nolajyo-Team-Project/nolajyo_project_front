@@ -33,19 +33,14 @@ class BirthAndAddressScreen extends GetView<BirthAndAddressViewModel> {
   Widget build(BuildContext context) {
     final controller = Get.put(BirthAndAddressViewModel());
     return BaseScreen(
+      title: "회원 정보를 입력해주세요",
+      isHomeScreen: false,
       child: FormBuilder(
         key: _fbKey,
         autovalidateMode: AutovalidateMode.disabled,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "회원 정보를 입력해주세요",
-              style: titleTextStyle,
-            ),
-            const SizedBox(
-              height: 49,
-            ),
             const Text(
               "생월일을 입력해주세요",
               style: bodyTextStyle,

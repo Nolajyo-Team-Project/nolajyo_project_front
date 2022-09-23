@@ -12,6 +12,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
+      title: "우리 동네 HOT 모임",
+      isHomeScreen: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(
@@ -22,32 +24,6 @@ class HomeScreen extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const Text("우리 동네 HOT 모임", style: titleTextStyle),
-                const SizedBox(
-                  width: 8,
-                ),
-                const Spacer(),
-                IconButton(
-                  padding: const EdgeInsets.all(0),
-                  onPressed: () {},
-                  icon: const Icon(Icons.search),
-                ),
-                IconButton(
-                  padding: const EdgeInsets.all(0),
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu,
-                    size: 30,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 35.w,
-            ),
             GridView.builder(
               shrinkWrap: true,
               itemCount: 8,

@@ -68,6 +68,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             fontFamily: 'Noto Sans Kr',
             primarySwatch: createMaterialColor(mainColor),
+            scaffoldBackgroundColor: white,
           ),
           navigatorKey: GlobalUtils.navigatorKey,
           // home: child,
@@ -88,6 +89,8 @@ class TempHomeScreen extends StatelessWidget {
         return await Future.value(backResult);
       },
       child: BaseScreen(
+        isHomeScreen: false,
+        title: "",
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
