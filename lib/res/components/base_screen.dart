@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nolajyo_project/res/constants/color_data.dart';
 import 'package:nolajyo_project/res/constants/font_data.dart';
 
@@ -58,6 +57,7 @@ class BaseScreen extends StatelessWidget {
           title,
           style: titleTextStyle,
         ),
+        centerTitle: false,
       ),
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation,
