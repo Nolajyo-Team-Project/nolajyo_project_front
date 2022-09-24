@@ -11,6 +11,7 @@ class HomeConcern extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       splashFactory: NoSplash.splashFactory,
+      highlightColor: Colors.transparent,
       onTap: onPressed,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
