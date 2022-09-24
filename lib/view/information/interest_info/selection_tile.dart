@@ -3,7 +3,7 @@ import 'package:nolajyo_project/models/concern_model.dart';
 import 'package:nolajyo_project/res/constants/font_data.dart';
 
 class SelectionTile extends StatelessWidget {
-  final Concern concern;
+  final ConcernModel concern;
   final bool selected;
   const SelectionTile(
     this.concern, {
