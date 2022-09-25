@@ -17,6 +17,8 @@ class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
   Widget build(BuildContext context) {
     final controller = Get.put(NicknameInfoViewModel());
     return BaseScreen(
+      title: "회원 정보를 입력해주세요",
+      isHomeScreen: false,
       floatingActionButton: Obx(
         () => SizedBox(
           width: 329,
@@ -48,13 +50,6 @@ class NicknameInfoScreen extends GetView<NicknameInfoViewModel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "회원 정보를 입력해주세요",
-              style: titleTextStyle,
-            ),
-            const SizedBox(
-              height: 49,
-            ),
             const Text(
               "닉네임을 만들어주세요",
               style: bodyTextStyle,

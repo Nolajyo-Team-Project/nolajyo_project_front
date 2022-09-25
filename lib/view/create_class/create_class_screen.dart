@@ -20,6 +20,8 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
   Widget build(BuildContext context) {
     final controller = Get.put(CreateClassViewModel());
     return BaseScreen(
+      title: "모임 만들기",
+      isHomeScreen: false,
       floatingActionButton: SizedBox(
         width: 329,
         height: 70,

@@ -11,13 +11,11 @@ class PermissionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
+      isHomeScreen: false,
+      title: "접근 권한 허용",
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("접근 권한 허용", style: titleTextStyle),
-          const SizedBox(
-            height: 26,
-          ),
           const Text(
             "놀아죠 이용을 위해 다음의\n접근 권한 허용이 필요합니다.",
             style: bodyTextStyle,
