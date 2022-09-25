@@ -50,10 +50,6 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "모임 만들기",
-                style: titleTextStyle,
-              ),
               Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 26, bottom: 14),
@@ -86,7 +82,8 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         hintText: '15자 내외',
-                        hintStyle: bodyTextStyle.copyWith(color: placeHolderTextColor),
+                        hintStyle:
+                            bodyTextStyle.copyWith(color: placeHolderTextColor),
                         contentPadding: const EdgeInsets.all(9),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -94,7 +91,8 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
                         ),
                       ),
                       validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(errorText: '모임 이름을 입력해 주세요.'),
+                        FormBuilderValidators.required(
+                            errorText: '모임 이름을 입력해 주세요.'),
                       ]),
                     ),
                   ),
@@ -117,7 +115,8 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
                   // shrinkWrap: true,
                   itemCount: homeConcernList.length,
                   itemBuilder: (context, index) {
-                    return HomeConcern(concern: homeConcernList[index], onPressed: () {});
+                    return HomeConcern(
+                        concern: homeConcernList[index], onPressed: () {});
                   },
                   separatorBuilder: (context, index) {
                     return SizedBox(
@@ -174,7 +173,8 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
                 keyboardType: TextInputType.multiline,
                 decoration: InputDecoration(
                   hintText: '모임 소개 입력',
-                  hintStyle: bodyTextStyle.copyWith(color: placeHolderTextColor),
+                  hintStyle:
+                      bodyTextStyle.copyWith(color: placeHolderTextColor),
                   constraints: const BoxConstraints(maxHeight: 170),
                   contentPadding: const EdgeInsets.all(9),
                   border: OutlineInputBorder(
@@ -201,7 +201,8 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         hintText: '인원',
-                        hintStyle: bodyTextStyle.copyWith(color: placeHolderTextColor),
+                        hintStyle:
+                            bodyTextStyle.copyWith(color: placeHolderTextColor),
                         contentPadding: const EdgeInsets.all(9),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -209,8 +210,10 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
                         ),
                       ),
                       validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(errorText: '명수를 입력해 주세요.'),
-                        FormBuilderValidators.integer(errorText: '숫자를 입력해 주세요.'),
+                        FormBuilderValidators.required(
+                            errorText: '명수를 입력해 주세요.'),
+                        FormBuilderValidators.integer(
+                            errorText: '숫자를 입력해 주세요.'),
                       ]),
                     ),
                   ),
