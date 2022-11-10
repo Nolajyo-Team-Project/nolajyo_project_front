@@ -43,185 +43,187 @@ class CreateClassScreen extends GetView<CreateClassViewModel> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      child: Scaffold(
-        body: FormBuilder(
-          key: _fbKey,
-          autovalidateMode: AutovalidateMode.disabled,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 26, bottom: 14),
-                  width: 96.w,
-                  height: 71.h,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  child: const Icon(
-                    Icons.camera_alt_outlined,
-                    color: Colors.white,
-                  ),
+      child: FormBuilder(
+        key: _fbKey,
+        autovalidateMode: AutovalidateMode.disabled,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                margin: const EdgeInsets.only(top: 26, bottom: 14),
+                width: 96.w,
+                height: 71.h,
+                decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  borderRadius: BorderRadius.circular(7),
+                ),
+                child: const Icon(
+                  Icons.camera_alt_outlined,
+                  color: Colors.white,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Text(
-                    '모임 이름',
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Text(
+                  '모임 이름',
+                  style: bodyTextStyle,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Expanded(
+                  child: FormBuilderTextField(
                     style: bodyTextStyle,
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Expanded(
-                    child: FormBuilderTextField(
-                      style: bodyTextStyle,
-                      name: 'name',
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        hintText: '15자 내외',
-                        hintStyle:
-                            bodyTextStyle.copyWith(color: placeHolderTextColor),
-                        contentPadding: const EdgeInsets.all(9),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                          borderSide: const BorderSide(color: gray2, width: 2),
-                        ),
+                    name: 'name',
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: '15자 내외',
+                      hintStyle: bodyTextStyle.copyWith(color: placeHolderTextColor),
+                      contentPadding: const EdgeInsets.all(9),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: const BorderSide(color: gray2, width: 2),
                       ),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(
-                            errorText: '모임 이름을 입력해 주세요.'),
-                      ]),
                     ),
+                    validator: FormBuilderValidators.compose([
+                      FormBuilderValidators.required(
+                        errorText: '모임 이름을 입력해 주세요.',
+                      ),
+                    ]),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 14.h,
-              ),
-              const Text(
-                "취미를 선택해주세요.",
-                style: bodyTextStyle,
-              ),
-              SizedBox(
-                height: 11.h,
-              ),
-              SizedBox(
-                height: 65.h,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  // shrinkWrap: true,
-                  itemCount: homeConcernList.length,
-                  itemBuilder: (context, index) {
-                    return HomeConcern(
-                        concern: homeConcernList[index], onPressed: () {});
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(
-                      width: 16.w,
-                    );
-                  },
                 ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              const Text(
-                "모임지역을 선택해 주세요.",
-                style: bodyTextStyle,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              DropdownSearch<String>(
-                popupProps: PopupProps.menu(
-                  showSelectedItems: true,
-                  itemBuilder: regionDropDownWidget,
-                ),
-                dropdownBuilder: (context, value) {
-                  return Text(
-                    "$value",
-                    style: bodyTextStyle,
+              ],
+            ),
+            SizedBox(
+              height: 14.h,
+            ),
+            const Text(
+              "취미를 선택해주세요.",
+              style: bodyTextStyle,
+            ),
+            SizedBox(
+              height: 11.h,
+            ),
+            SizedBox(
+              height: 70.h,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                // shrinkWrap: true,
+                itemCount: homeConcernList.length,
+                itemBuilder: (context, index) {
+                  return HomeConcern(
+                    concern: homeConcernList[index],
+                    onPressed: () {
+                      
+                    },
                   );
                 },
-                dropdownButtonProps: const DropdownButtonProps(
-                  icon: Icon(Icons.keyboard_arrow_down),
-                  iconSize: 24,
-                ),
-                dropdownDecoratorProps: DropDownDecoratorProps(
-                  baseStyle: bodyTextStyle,
-                  dropdownSearchDecoration: InputDecoration(
-                    contentPadding: const EdgeInsets.all(11),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                ),
-                items: regionList,
-                onChanged: print,
-                selectedItem: regionList[0],
+                separatorBuilder: (context, index) {
+                  return SizedBox(
+                    width: 16.w,
+                  );
+                },
               ),
-              SizedBox(
-                height: 16.h,
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            const Text(
+              "모임지역을 선택해 주세요.",
+              style: bodyTextStyle,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            DropdownSearch<String>(
+              popupProps: PopupProps.menu(
+                showSelectedItems: true,
+                itemBuilder: regionDropDownWidget,
               ),
-              FormBuilderTextField(
-                style: bodyTextStyle,
-                name: 'name',
-                maxLines: 20,
-                keyboardType: TextInputType.multiline,
-                decoration: InputDecoration(
-                  hintText: '모임 소개 입력',
-                  hintStyle:
-                      bodyTextStyle.copyWith(color: placeHolderTextColor),
-                  constraints: const BoxConstraints(maxHeight: 170),
-                  contentPadding: const EdgeInsets.all(9),
+              dropdownBuilder: (context, value) {
+                return Text(
+                  "$value",
+                  style: bodyTextStyle,
+                );
+              },
+              dropdownButtonProps: const DropdownButtonProps(
+                icon: Icon(Icons.keyboard_arrow_down),
+                iconSize: 24,
+              ),
+              dropdownDecoratorProps: DropDownDecoratorProps(
+                baseStyle: bodyTextStyle,
+                dropdownSearchDecoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(11),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(color: gray2, width: 2),
                   ),
                 ),
-                validator: FormBuilderValidators.compose([
-                  FormBuilderValidators.required(errorText: '모임 소개를 입력해 주세요.'),
-                ]),
               ),
-              const SizedBox(
-                height: 9,
+              items: regionList,
+              onChanged: print,
+              selectedItem: regionList[0],
+            ),
+            SizedBox(
+              height: 16.h,
+            ),
+            FormBuilderTextField(
+              style: bodyTextStyle,
+              name: 'name',
+              maxLines: 20,
+              keyboardType: TextInputType.multiline,
+              decoration: InputDecoration(
+                hintText: '모임 소개 입력',
+                hintStyle: bodyTextStyle.copyWith(color: placeHolderTextColor),
+                constraints: const BoxConstraints(maxHeight: 170),
+                contentPadding: const EdgeInsets.all(9),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: const BorderSide(color: gray2, width: 2),
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Text('인원'),
-                  const Spacer(),
-                  Expanded(
-                    child: FormBuilderTextField(
-                      style: bodyTextStyle,
-                      name: 'count',
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        hintText: '인원',
-                        hintStyle:
-                            bodyTextStyle.copyWith(color: placeHolderTextColor),
-                        contentPadding: const EdgeInsets.all(9),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                          borderSide: const BorderSide(color: gray2, width: 2),
-                        ),
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(errorText: '모임 소개를 입력해 주세요.'),
+              ]),
+            ),
+            const SizedBox(
+              height: 9,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Text('인원'),
+                const Spacer(),
+                Expanded(
+                  child: FormBuilderTextField(
+                    style: bodyTextStyle,
+                    name: 'count',
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: '인원',
+                      hintStyle: bodyTextStyle.copyWith(color: placeHolderTextColor),
+                      contentPadding: const EdgeInsets.all(9),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: const BorderSide(color: gray2, width: 2),
                       ),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(
-                            errorText: '명수를 입력해 주세요.'),
-                        FormBuilderValidators.integer(
-                            errorText: '숫자를 입력해 주세요.'),
-                      ]),
                     ),
+                    validator: FormBuilderValidators.compose([
+                      FormBuilderValidators.required(
+                        errorText: '명수를 입력해 주세요.',
+                      ),
+                      FormBuilderValidators.integer(
+                        errorText: '숫자를 입력해 주세요.',
+                      ),
+                    ]),
                   ),
-                ],
-              ),
-              const Spacer()
-            ],
-          ),
+                ),
+              ],
+            ),
+            const Spacer()
+          ],
         ),
       ),
     );

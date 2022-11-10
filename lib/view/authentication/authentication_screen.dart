@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:nolajyo_project/res/constants/color_data.dart';
+import 'package:flutter/services.dart';
 import 'package:nolajyo_project/res/components/base_screen.dart';
+import 'package:nolajyo_project/res/constants/color_data.dart';
 import 'package:nolajyo_project/res/constants/font_data.dart';
 
-class AuthenticationScreen extends StatelessWidget {
+class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
+
+  @override
+  State<AuthenticationScreen> createState() => _AuthenticationScreenState();
+}
+
+class _AuthenticationScreenState extends State<AuthenticationScreen> {
+  TextEditingController phoneNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +54,19 @@ class AuthenticationScreen extends StatelessWidget {
 
             //* phone number enter
             TextFormField(
+              controller: phoneNumberController,
               keyboardType: TextInputType.number,
               style: bodyTextStyle,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+                // FilteringTextInputFormatter.allow(
+                //   RegExp(
+                //     r'[[0-9]]',
+                //   ),
+                // )
+              ],
               decoration: InputDecoration(
+                hintText: '',
                 constraints: const BoxConstraints(maxHeight: 47),
                 prefixText: "010 ",
                 contentPadding: const EdgeInsets.all(9),

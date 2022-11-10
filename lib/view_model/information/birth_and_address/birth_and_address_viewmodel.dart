@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:nolajyo_project/utils/utils.dart';
 
 class BirthAndAddressViewModel extends GetxController {
   final TextEditingController birthEditingController = TextEditingController();

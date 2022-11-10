@@ -8,8 +8,7 @@ import 'package:nolajyo_project/res/constants/font_data.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class GlobalUtils {
-  static final GlobalKey<NavigatorState> navigatorKey =
-      GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   static DateTime? currentBackPressTime;
 
@@ -40,13 +39,12 @@ class GlobalUtils {
     Map<Permission, PermissionStatus> statuses = await [
       Permission.camera,
       Permission.phone,
-      Permission.storage
+      Permission.storage,
     ].request();
 
     isDeniedPermissions = statuses.values.any(
       (element) =>
-          element == PermissionStatus.denied ||
-          element == PermissionStatus.permanentlyDenied,
+          element == PermissionStatus.denied || element == PermissionStatus.permanentlyDenied,
     );
 
     if (isDeniedPermissions) {
@@ -59,8 +57,7 @@ class GlobalUtils {
               TextSpan(
                 children: [
                   TextSpan(
-                    text:
-                        '앱 필수 접근 권한을 허용해 주셔야 정상적인\n 서비스 이용이 가능합니다.\n(단말기 설 > 앱 > 놀아죠 > 앱권한 설정)',
+                    text: '앱 필수 접근 권한을 허용해 주셔야 정상적인\n 서비스 이용이 가능합니다.\n(단말기 설 > 앱 > 놀아죠 > 앱권한 설정)',
                     style: bodyTextStyle,
                   ),
                 ],
@@ -92,5 +89,12 @@ class GlobalUtils {
     } else {
       Get.toNamed(route);
     }
+  }
+}
+
+class NoScrollGlow extends ScrollBehavior {
+  @override
+  Widget buildOverscrollIndicator(BuildContext context, Widget child, ScrollableDetails details) {
+    return child;
   }
 }
